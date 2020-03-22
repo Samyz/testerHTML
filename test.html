@@ -13,10 +13,13 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap core CSS -->
-	<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
     <style>
+      #error_alert{
+        display: none;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -36,27 +39,20 @@
     <link href="https://getbootstrap.com/docs/4.3/examples/sign-in/signin.css" rel="stylesheet">
 	
 	
-	<script>
-		$( document ).ready(function() {
-			$("div#error_alert").hide();
-		});
-		
-		function signin(){
-			isValid = false;
-		
-			username = $("#txt_username").val();
-			password = $("#txt_password").val();
-			
-			
-			if(username=="cekmitl" && password=="ecc56789") { isValid=true; } 
-			
-			if(!isValid){
-				$("div#error_alert").show();
-				return false;
-			}
-			
-			$(location).attr("href", "index.html");
-		}
+	  <script>
+    
+		function checksignin() {
+      var alert = document.getElementById("error_alert");
+      var name = document.getElementById("txt_name").value;
+      var surname = document.getElementById("txt_surname").value;
+      if (name === "cekmitl" && surname==="ecc56789")
+        alert.innerHTML = "Correct";
+      
+      else
+      alert.innerHTML = "Please enter valid username and password!";
+
+      alert.style.display="block";
+    }
     </script>
   </head>
   <body class="text-center">
@@ -81,10 +77,10 @@
 	  <label for="txt_number" class="sr-only">Student Number</label>
 	  <input type="text" id="txt_number" name="txt_number" class="form-control" placeholder="Student Number" pattern="[0-9]{8}" title="8 Number"><br><br>
   </div>
-  <input type="submit" class="btn btn-lg btn-primary btn-block" value="Submit"</form>
-  
-</div>
+  <button onclick="checksignin()">Submit</button>
+  </form>
 
+  
 
 </body>
 </html>
