@@ -71,20 +71,21 @@
   <form>
   <div>
 	<label for="txt_name" class="sr-only">Name</label>
-	<input type="text" id="txt_name" class="form-control" placeholder="Name" required autofocus pattern="[A-Za-z]" title="English Name"><br><br>
+	<input type="text" id="txt_name" name="txt_name" class="form-control" placeholder="Name" pattern="[A-Za-z]+" title="English Name"><br><br>
   </div>
   
   <div>
 	  <label for="txt_surname" class="sr-only">Surname</label>
-	  <input type="text" id="txt_surname" class="form-control" placeholder="Surname" required pattern="[A-Za-z]" title="English Surname"><br><br>
+	  <input type="text" id="txt_surname" name="txt_surname" class="form-control" placeholder="Surname" pattern="[A-Za-z]+" title="English Surname"><br><br>
   </div>
 	  
   <div>
 	  <label for="txt_number" class="sr-only">Student Number</label>
-	  <input type="text" id="txt_number" class="form-control" placeholder="Student Number" required pattern="[0-9]{8}" title="8 Number"><br><br>
+	  <input type="text" id="txt_number" name="txt_number" class="form-control" placeholder="Student Number" pattern="[0-9]{8}" title="8 Number"><br><br>
   </div>
   <button onclick="checksignin()">Submit</button>
   </form>
+
   
 
 </body>
