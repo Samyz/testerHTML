@@ -46,16 +46,22 @@
       var name = document.getElementById("txt_name").value;
       var surname = document.getElementById("txt_surname").value;
       var id = document.getElementById("txt_number").value;
-      if (name == "cekmitl" && surname=="ecc56789" && id == "123456")
+      if (name == "cekmitl" && surname=="ecc" && id == "12345678")
         alert.innerHTML = "Correct";
       else if(name != "cekmitl")
         alert.innerHTML = "Invalid Name";
-      else if(surname != "ecc56789")
+      else if(surname != "ecc")
         alert.innerHTML = "Invalid Surname";
-      else if(id != "123456")
+      else if(id != "12345678")
         alert.innerHTML = "Invalid Student Number";
-      else
-      alert.innerHTML = "Please enter valid username and password!";
+      else if(name != "cekmitl" && surname != "ecc")
+	      alert.innerHTML = "Please enter valid Name and Surname!";
+	else if(name != "cekmitl" && id != "12345678")
+	      alert.innerHTML = "Please enter valid Name and Student Number!";
+	else if(surname != "ecc" && id != "12345678")
+	      alert.innerHTML = "Please enter valid Surname and Student Number!";
+	else
+      alert.innerHTML = "Please enter valid Name, Surname and Student Number!";
 
       alert.style.display="block";
     }
